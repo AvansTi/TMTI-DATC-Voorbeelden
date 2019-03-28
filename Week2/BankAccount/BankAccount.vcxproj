@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{964D3820-F3A2-4F6C-880C-B86B1476F8C9}</ProjectGuid>
-    <RootNamespace>HelloCppArray</RootNamespace>
+    <ProjectGuid>{82C2C0E8-7463-4582-8454-342914EAE20D}</ProjectGuid>
+    <RootNamespace>BankAccount</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,7 +115,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HelloCppArray.cpp" />
+    <ClInclude Include="Bankaccount.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Bank.cpp" />
+    <ClCompile Include="Bankaccount.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

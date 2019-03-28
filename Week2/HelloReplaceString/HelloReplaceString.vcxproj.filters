@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HelloCppArray.cpp">
+    <ClCompile Include="HelloReplaceString.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

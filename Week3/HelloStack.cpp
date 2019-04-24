@@ -1,17 +1,18 @@
 #include <iostream>
 #include <string>
 #include "GenericStack.h"
-using namespace std;
+//using namespace std;
 
-/*int main() {
+
+int main(void) {
 	// Create a stack of int values
-	Stack<int> intStack;
+	/*Stack<int> intStack;
 	for (int i = 0; i < 10; i++)
 		intStack.push(i);
 
 	while (!intStack.empty())
 		cout << intStack.pop() << " ";
-	cout << endl;
+	cout << '\n';
 
 	// Create a stack of strings
 	Stack<string> stringStack;
@@ -21,9 +22,12 @@ using namespace std;
 
 	while (!stringStack.empty())
 		cout << stringStack.pop() << " ";
-	cout << endl;
+	cout << '\n';
 
 	cin.get();
 
+	return 0;*/
+
+
 	return 0;
-}*/
+}

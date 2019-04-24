@@ -5,7 +5,7 @@
 #include "GenericStack.h"
 
 using namespace std;
-
+/*
 // Split an expression into numbers, operators, and parenthese
 vector<string> split(const string& expression);
 
@@ -15,7 +15,7 @@ int evaluateExpression(const string& expression);
 // Perform an operation
 void processAnOperator(Stack<int>& operandStack, Stack<char>& operatorStack);
 
-int main() {
+int main(void) {  // NOLINT(bugprone-exception-escape)
 	string expression;
 	while (true) {
 		cout << "Enter an expression: ";
@@ -24,8 +24,6 @@ int main() {
 		cout << expression << " = " << evaluateExpression(expression) << endl;
 	}
 	cin.get();
-
-	return 0;
 }
 
 vector<string> split(const string& expression) {
@@ -126,3 +124,5 @@ void processAnOperator(Stack<int>& operandStack, Stack<char>& operatorStack) {
 	else if (op == '/')
 		operandStack.push(op2 / op1);
 }
+
+*/

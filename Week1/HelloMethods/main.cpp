@@ -19,13 +19,13 @@ int main() {
 	{
 		int number = 1;
 		changeNumber(number);
-		std::cout << "Pass by value: " << number << std::endl;
+		std::cout << "Pass by value: " << number << '\n';
 	}
 
 	{
 		int number = 1;
 		changeNumberRef(number);
-		std::cout << "Pass by reference: " << number << std::endl;
+		std::cout << "Pass by reference: " << number << '\n';
 	}
 
 	{
@@ -34,10 +34,7 @@ int main() {
 		std::cout << "Pass by pointer: " << number << std::endl;
 	}
 
-	{
-		int x;
-		std::cin >> x;
-	}
+	std::cin.get();
 
 	return 0;
 }

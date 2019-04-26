@@ -11,7 +11,7 @@ int main() {
 	for (int i = 1; i < length; i++) {
 		maximum = std::max(numbers[i], maximum);
 	}
-	std::cout << "Maximum is: " << maximum << std::endl;
+	std::cout << "Maximum is: " << maximum << '\n';
 }
 
 

@@ -12,11 +12,10 @@ int main()
 	for (int i = 0; i < 20; i++)
 	{
 		cout << setw(3) << i;
-		cout << setw(12) << x * i << endl;
+		cout << setw(12) << x * i << '\n';
 	}
 
-	int i;
-	cin >> i;
+	cin.get();
 	
 	return 0;
 }

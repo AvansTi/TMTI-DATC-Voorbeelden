@@ -3,9 +3,7 @@
 using namespace std;
 
 int main() {
-	cout << "Hello World" << endl;
+	cout << "Hello World" << '\n';
 
-	int x;
-	cin >> x;
-	return 0;
+	cin.get();
 }

@@ -13,8 +13,7 @@ int main() {
 	writeFile();
 	readFile();
 
-	int i;
-	cin >> i;
+	cin.get();
 
 	return 0;
 }
@@ -25,8 +24,8 @@ void writeFile() {
 	output.open("people.txt"); // Create a file
 
 	// Write two lines
-	output << "Etienne" << " " << "Goossens" << " " << 1990 << endl;
-	output << "Johan" << " " << "Talboom" << " " << 1984 << endl;
+	output << "Etienne" << " " << "Goossens" << " " << 1990 << '\n';
+	output << "Johan" << " " << "Talboom" << " " << 1984 << '\n';
 
 	output.close();
 
@@ -38,7 +37,7 @@ void readFile() {
 	input.open("people.txt");
 
 	if (!input.is_open()) {
-		cout << "Cannot open file" << endl;
+		cout << "Cannot open file" << '\n';
 		return;
 	}
 
@@ -46,8 +45,8 @@ void readFile() {
 		string line;
 		getline(input, line);
 
-		cout << "Readed line: " << line << endl;
+		cout << "Readed line: " << line << '\n';
 	}
 
-	cout << "Reading done!" << endl;
+	cout << "Reading done!" << '\n';
 }

@@ -22,8 +22,7 @@ int main() {
 	std::cout << "Combined String: " << combinedString << std::endl;
 
 	
-	int x;
-	std::cin >> x;
+	std::cin.get();
 
 	return 0;
 }

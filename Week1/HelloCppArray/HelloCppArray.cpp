@@ -4,6 +4,8 @@
 
 constexpr int size = 5;
 
+int largest(std::array<int, size> &myArray);
+
 int main() {
 
 	std::array<int, size> myArray = { 2, 16, 77, 34, 50 };
@@ -21,6 +23,12 @@ int main() {
 
 	std::cout << '\n';
 
+	std::cout << "Largest number: " << largest(myArray) << std::endl;
+
+	int x = NULL;
+
+	std::cin.get();
+
 }
 
 int largest(std::array<int, size> &myArray) {
@@ -30,5 +38,5 @@ int largest(std::array<int, size> &myArray) {
 		largest = std::max(largest, value);
 	}
 		
-	
+	return largest;
 }

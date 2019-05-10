@@ -10,7 +10,7 @@ int main()
 		LinkedList<double> linkedlist;
 		linkedlist.insertFront(10.0);
 		linkedlist.insertFront(20.0);
-		linkedlist.insertEnd(12.1);
+		//linkedlist.insertEnd(12.1);
 	}
 	{
 		LinkedList<std::string> linkedlist;

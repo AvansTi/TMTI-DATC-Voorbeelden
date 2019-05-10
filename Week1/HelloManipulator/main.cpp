@@ -15,6 +15,15 @@ int main()
 		cout << setw(12) << x * i << '\n';
 	}
 
+
+	cout << "Enter a number: ";
+	int value;
+	cin >> value;
+	cout << endl;
+
+	cout << "Entered value: " << value;
+
+
 	cin.get();
 	
 	return 0;

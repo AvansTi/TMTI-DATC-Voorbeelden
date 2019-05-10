@@ -10,7 +10,7 @@ LinkedList<T>::LinkedList() {
 template <class T>
 LinkedList<T>::~LinkedList() {
 	Node<T>* temp = first;
-	while (temp != NULL) {
+	while (temp != nullptr) {
 		temp = temp->next;
 		delete first;
 		first = temp;
@@ -24,11 +24,11 @@ void LinkedList<T>::insertEnd(T item) {
 	newNode->next = NULL;
 	Node<T>* temp = first;
 
-	if (temp == NULL) {
+	if (temp == nullptr) {
 		first = newNode;
 	}
 	else {
-		while (temp->next != NULL) {
+		while (temp->next != nullptr) {
 			temp = temp->next;
 		}
 		temp->next = newNode;
@@ -40,7 +40,7 @@ void LinkedList<T>::insertFront(T item) {
 	Node<T>* newNode = new Node<T>;
 	newNode->value = item;
 
-	if (first == NULL) {
+	if (first == nullptr) {
 		first = newNode;
 	}
 	else {
@@ -64,7 +64,7 @@ bool LinkedList<T>::removeEnd() {
 		Node<T>* temp = first;
 		int nodeCount = 0;
 
-		while (temp != NULL) {
+		while (temp != nullptr) {
 			nodeCount = nodeCount + 1;
 			temp = temp->next;
 		}
@@ -76,7 +76,7 @@ bool LinkedList<T>::removeEnd() {
 
 		delete temp2->next;
 		last = temp2;
-		last->next = NULL;
+		last->next = nullptr;
 
 		return true;
 	}
@@ -97,8 +97,7 @@ bool LinkedList<T>::removeFront() {
 template <class T>
 bool LinkedList<T>::isEmpty() {
 	// No items
-	if (first == NULL && last == NULL) { return true; }
-	else { return false; }
+	return (first == nullptr && last == nullptr);
 }
 
 template <class T>
@@ -108,7 +107,7 @@ size_t LinkedList<T>::size() {
 	Node<T>* temp = first;
 	size_t nodeSize = 0;
 
-	while (temp != NULL) {
+	while (temp != nullptr) {
 		nodeSize++;
 		temp = temp->next;
 	}
@@ -118,7 +117,7 @@ size_t LinkedList<T>::size() {
 template <class T>
 void LinkedList<T>::clear() {
 	Node<T>* temp = first;
-	while (temp != NULL) {
+	while (temp != nullptr) {
 		temp = temp->next;
 		first = temp;
 		delete temp;

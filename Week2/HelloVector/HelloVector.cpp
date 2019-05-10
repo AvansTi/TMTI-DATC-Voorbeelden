@@ -1,6 +1,7 @@
 
 #include <vector>
 #include <iostream>
+#include <string>
 
 void printVector(const std::vector<double>& v);
 
@@ -31,18 +32,15 @@ int main() {
 	}
 
 
-	int x;
-	std::cin >> x;
+	std::cin.get();
 
 	return 0;
 }
 
 
 void printVector(const std::vector<double>& v) {
-	// Const iterator
-	std::vector<double>::const_iterator pos;
 
-	for (pos = v.cbegin(); pos < v.cend(); ++pos) {
+	for (auto pos = v.cbegin(); pos < v.cend(); ++pos) {
 		std::cout << *pos << std::endl;
 	}
 }

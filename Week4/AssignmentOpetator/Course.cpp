@@ -44,3 +44,20 @@ string* Course::getStudents() const {
 int Course::getNumberOfStudents() const {
 	return numberOfStudents;
 }
+
+Course& Course::operator=(const Course& course) {
+	if (this != &course) { // Do nothing with self-assignment
+		courseName = course.courseName;
+		numberOfStudents = course.numberOfStudents;
+		capacity = course.capacity;
+
+		delete[] this->students; // Delete the old array
+
+		// Create a new array with the same capacity as course copied
+		students = new string[capacity];
+		for (int i = 0; i < numberOfStudents; i++)
+			students[i] = course.students[i];
+	}
+
+	return *this;
+}

@@ -1,6 +1,7 @@
-#ifndef RATIONAL_H
-#define RATIONAL_H
+#ifndef RATIONALWITHOPERATORS_H
+#define RATIONALWITHOPERATORS_H
 #include <string>
+#include <iostream>
 using namespace std;
 
 class Rational
@@ -20,41 +21,51 @@ public:
 	double doubleValue() const;
 	string toString() const;
 
+	Rational(int numerator); // Suitable for type conversion 
 
-	// Added for overloading
+	// Define function operators for augmented operators
+	Rational& operator+=(const Rational& secondRational);
+	Rational& operator-=(const Rational& secondRational);
+	Rational& operator*=(const Rational& secondRational);
+	Rational& operator/=(const Rational& secondRational);
 
-	// Compare operator(s)
-	bool operator<(const Rational& second) const;
-
-	// Math operator(s)
-	Rational operator+(const Rational& second) const;
-	Rational operator-(const Rational& second) const;
-	Rational operator*(const Rational& second) const;
-	Rational operator/(const Rational& second) const;
-	Rational operator-() const;
-	Rational& operator+=(const Rational& second);
-	Rational& operator-=(const Rational& second);
-
-	// Access index
+	// Define function operator []
 	int& operator[](int index);
-	bool operator==(const Rational& second) const;
 
+	// Define function operators for prefix ++ and --
+	Rational& operator++();
+	Rational& operator--();
 
-	// Conversion operators
-	operator double();
-	operator int();
-	operator std::string() const {
-		return toString();
-	}
+	// Define function operators for postfix ++ and --
+	Rational operator++(int dummy);
+	Rational operator--(int dummy);
 
+	// Define function operators for unary + and -
+	Rational operator+();
+	Rational operator-();
+
+	// Define the << and >> operators
 	friend ostream& operator<<(ostream&, const Rational&);
 	friend istream& operator>>(istream&, Rational&);
-	
 
 private:
 	int numerator;
 	int denominator;
 	static int gcd(int n, int d);
 };
+
+// Define nonmember function operators for relational operators
+bool operator<(const Rational& r1, const Rational& r2);
+bool operator<=(const Rational& r1, const Rational& r2);
+bool operator>(const Rational& r1, const Rational& r2);
+bool operator>=(const Rational& r1, const Rational& r2);
+bool operator==(const Rational& r1, const Rational& r2);
+bool operator!=(const Rational& r1, const Rational& r2);
+
+// Define nonmember function operators for arithmetic operators
+Rational operator+(const Rational& r1, const Rational& r2);
+Rational operator-(const Rational& r1, const Rational& r2);
+Rational operator*(const Rational& r1, const Rational& r2);
+Rational operator/(const Rational& r1, const Rational& r2);
 
 #endif

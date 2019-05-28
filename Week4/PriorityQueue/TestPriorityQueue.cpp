@@ -13,7 +13,7 @@ void printQueue(T& pQueue) {
 		pQueue.pop();
 	}
 }
-/*
+
 int main() {
 	priority_queue<int> queue1;
 	priority_queue<int, deque<int>, greater<int>> queue2;
@@ -33,9 +33,9 @@ int main() {
 	cin.get();
 
 	return 0;
-}*/
+}
 
-
+/*
 int main() {
 	std::priority_queue<std::pair<int, std::string> > pq;
 	pq.push(std::make_pair(3, "Start visual studio"));
@@ -53,3 +53,4 @@ int main() {
 	std::cin.get();
 	return 0;
 }
+*/

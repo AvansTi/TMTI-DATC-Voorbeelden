@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="HuffmanCodering.cpp">
+    <ClCompile Include="UnionExample.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

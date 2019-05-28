@@ -116,7 +116,7 @@ int main() {
 
 	for (int i = 0; i < UniqueSymbols; i++) {
 		if (frequencies[i] != 0)
-			std::cout << static_cast<char>(i) << "-" << frequencies[i] << std::endl;
+			std::cout << static_cast<char>(i) << " : " << frequencies[i] << std::endl;
 	}
 	std::cout << std::endl;
 
@@ -136,3 +136,15 @@ int main() {
 	std::cin.get();
 	return 0;
 }
+
+
+
+//#include <iostream>
+
+/*int main() {
+	unsigned int i = std::numeric_limits<unsigned int>::max();
+	std::cout << ++i;
+	std::cin.get();
+
+	return 0;
+}*/

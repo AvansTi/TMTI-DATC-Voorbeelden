@@ -1,5 +1,6 @@
 #ifndef RATIONALWITHOPERATORS_H
 #define RATIONALWITHOPERATORS_H
+
 #include <string>
 #include <iostream>
 using namespace std;

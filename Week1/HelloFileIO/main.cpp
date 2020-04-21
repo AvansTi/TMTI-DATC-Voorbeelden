@@ -13,13 +13,12 @@ int main() {
 	writeFile();
 	readFile();
 
-	cin.get();
-
 	return 0;
 }
 
 void writeFile() {
 	// Write to a file
+
 	ofstream output;
 	output.open("people.txt"); // Create a file
 

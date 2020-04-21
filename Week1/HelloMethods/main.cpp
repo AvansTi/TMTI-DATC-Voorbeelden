@@ -2,7 +2,7 @@
 
 
 void printCircleArea(double radius = 1); // default arg
-void printNumber(const int number); // const
+void printNumber(int number); // const
 
 // Pass by reference / value / pointer
 void changeNumber(int number);
@@ -13,6 +13,10 @@ int main() {
 
 	printCircleArea();
 	printCircleArea(4);
+
+	int number = 10;
+	printNumber(number);
+	std::cout << number << std::endl;
 
 	std::cout << std::endl;
 
@@ -34,7 +38,6 @@ int main() {
 		std::cout << "Pass by pointer: " << number << std::endl;
 	}
 
-	std::cin.get();
 
 	return 0;
 }
@@ -44,10 +47,10 @@ void printCircleArea(double radius) {
 	std::cout << "area is " << area << std::endl;
 }
 
-void printNumber(const int number) {
-	
+void printNumber(int number) {
+	number = 100;
 	std::cout << "Number: " << number << std::endl;
-	//number = 10;
+	
 }
 
 void changeNumber(int number) {

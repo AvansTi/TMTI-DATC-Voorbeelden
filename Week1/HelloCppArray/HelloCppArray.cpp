@@ -5,6 +5,8 @@
 constexpr int size = 5;
 
 int largest(std::array<int, size> &myArray);
+int largestStd(std::array<int, size>& myArray);
+
 
 int main() {
 
@@ -23,20 +25,23 @@ int main() {
 
 	std::cout << '\n';
 
-	std::cout << "Largest number: " << largest(myArray) << std::endl;
-
-	int x = NULL;
-
-	std::cin.get();
+	std::cout << "Largest number: " << largestStd(myArray) << std::endl;
 
 }
 
 int largest(std::array<int, size> &myArray) {
-
+	if (myArray.size() == 0)
+		return 0;
 	auto largest = myArray.at(0);
 	for (auto value : myArray) {
 		largest = std::max(largest, value);
 	}
 		
 	return largest;
+}
+
+int largestStd(std::array<int, size>& myArray) {
+
+	auto result = std::max_element(myArray.begin(), myArray.end());
+	return *result;
 }

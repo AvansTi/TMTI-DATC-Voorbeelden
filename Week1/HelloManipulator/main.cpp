@@ -1,30 +1,25 @@
 #include <iostream>
 #include <iomanip>
 
-using namespace std;
-
 int main()
 {
 	double x = 2000.0;
 
-	cout << setprecision(2) << showpoint << fixed;
+	std::cout << std::setprecision(2) << std::showpoint << std::fixed;
 
 	for (int i = 0; i < 20; i++)
 	{
-		cout << setw(3) << i;
-		cout << setw(12) << x * i << '\n';
+		std::cout << std::setw(3) << i;
+		std::cout << std::setw(12) << x * i << '\n';
 	}
 
 
-	cout << "Enter a number: ";
+	std::cout << "Enter a number: ";
 	int value;
-	cin >> value;
-	cout << endl;
+	std::cin >> value;
+	std::cout << std::endl;
 
-	cout << "Entered value: " << value;
-
-
-	cin.get();
+	std::cout << "Entered value: " << value;
 	
 	return 0;
 }

@@ -1,7 +1,7 @@
 #include "Bankaccount.h"
 #include <sstream>
 
-Bankaccount::Bankaccount(std::string lastName, std::string accountNumber) :
+Bankaccount::Bankaccount(std::string lastName, std::string accountNumber) noexcept :
 lastName(lastName), accountNumber(accountNumber), balance(0) {
 	
 }

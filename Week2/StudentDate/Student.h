@@ -1,22 +1,20 @@
-#ifndef STUDENT_H
-#define STUDENT_H
+#pragma once
 
 #include <string>
 #include "Date.h"
 
-using namespace std;
-
 class Student {
 private:
-	string name, study, gender;
+	std::string name, study, gender;
 	int number;
 	Date birthday;
 
 public:
-	Student(string n, string opl, string gesl, int nr, Date birthday);
-	string toString() const;
+	Student(std::string name, std::string study, std::string gender, int number, Date birthday) noexcept;
+	Student() = delete;
+	~Student() = default;
+
+	std::string toString() const;
 	void naamInUpperCase();
 	void changeYear(int year);
 };
-
-#endif

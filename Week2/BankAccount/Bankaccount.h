@@ -10,7 +10,7 @@ private:
 	double balance;
 	
 public:
-	Bankaccount(std::string lastName, std::string accountNumber);
+	Bankaccount(std::string lastName, std::string accountNumber) noexcept;
 	void deposite(double amount);
 	void withdraw(double amount);
 	double getBalance();

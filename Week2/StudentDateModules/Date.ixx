@@ -1,6 +1,6 @@
-#include "Date.h"
-#include <sstream>
-#include <iomanip>
+export module StudentDate;
+
+import std.core;
 
 Date::Date(int day, int month, int year) noexcept
 	: day(day), month(month), year(year) {

@@ -20,7 +20,4 @@ int main() {
 		std::cout << b.toString() << std::endl;
 	}
 	
-
-	int x;
-	std::cin >> x;
 }

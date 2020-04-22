@@ -1,15 +1,17 @@
 
-#include <vector>
+/*#include <vector>
 #include <iostream>
-#include <string>
+#include <string>*/
+
+import std.core;
 
 void printVector(const std::vector<double>& v);
 
 int main() {
 	
-	double a[5] = { 10.2, 1.23, 3.43, 3.14, 101.79 };
-	//std::vector<double> v(10); // Initialize vector with 10 zeros
-	//std::vector<double> v(a, a + 5);
+	double a[] = { 10.2, 1.23, 3.43, 3.14, 101.79 };
+	//std::vector<double> v{10}; // Initialize vector with 10 zeros
+	//std::vector<double> v{a, a + 5};
 	std::vector<double> v = { 10.2, 1.23, 3.43, 3.14, 101.79 };
 
 	std::cout << "Capacity: " << v.capacity() << ", size: " << v.size() << std::endl; // check capacity
@@ -30,9 +32,6 @@ int main() {
 	while (!v.empty()) {
 		v.pop_back();
 	}
-
-
-	std::cin.get();
 
 	return 0;
 }

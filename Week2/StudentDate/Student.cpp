@@ -2,17 +2,17 @@
 #include <locale>
 #include <sstream>
 
-Student::Student(string name, string study, string gender, int number, Date birthday)
+Student::Student(std::string name, std::string study, std::string gender, int number, Date birthday) noexcept
 	: name(name), study(study), gender(gender), number(number),
 	birthday(birthday) {
 }
 
-string Student::toString() const {
-	stringstream os;
-	os << name << " (" << birthday.toString() << ")" << endl;
-	os << study << endl;
-	os << gender << endl;
-	os << number << endl;
+std::string Student::toString() const {
+	std::stringstream os;
+	os << name << " (" << birthday.toString() << ")\n";
+	os << study << '\n';
+	os << gender << '\n';
+	os << number << std::endl;
 	return os.str();
 }
 

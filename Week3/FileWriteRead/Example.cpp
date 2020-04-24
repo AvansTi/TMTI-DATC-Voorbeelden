@@ -5,69 +5,70 @@
 #include <iterator>
 
 
-using namespace std;
-using namespace std::literals::string_literals;
+using namespace std::string_literals;
 
 typedef struct {
-	string firstname;
-	string lastname;
+	std::string firstname;
+	std::string lastname;
 	int grade;
 } grade_t;
 
 
-void writeFile(vector<int>& data, const string& filename);
-void readFile(vector<int>& data, const string& filename);
+void writeFile(std::vector<int>& data, const std::string& filename);
+void readFile(std::vector<int>& data, const std::string& filename);
 
 int main() {
 
 	// Default data
-	vector<int> v;
+	std::vector<int> v;
 	for (int i = 1; i < 30; i+=2) {
 		v.push_back(i);
 	}
 
 	// Write to file
-	cout << "Write to file" << '\n';
+	std::cout << "Write to file" << '\n';
 	writeFile(v, "odd.txt");
 
 	// Read from file
-	cout << "Read from file" << endl;
+	std::cout << "Read from file\n";
 	v.clear(); // first clear the data
 	readFile(v, "odd.txt");
 
 	// Check file content
-	copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
+	copy(v.begin(), v.end(), std::ostream_iterator<int>(std::cout, " "));
 
 
-	cout << "Done" << endl;
-
-	cin.get();
+	std::cout << "Done\n";
 
 	return 0;
 }
 
 
-void writeFile(vector<int>& data, const string& filename) {
+void writeFile(std::vector<int>& data, const std::string& filename) {
 	
-	ofstream output;
+	std::ofstream output;
 
 	output.open(filename);
 
-	copy(data.begin(), data.end(), ostream_iterator<int>(output, " "));
-	cout << "File created" << '\n';
+	for (auto d : data) {
+		output << d << '\n';
+	}
+
+	copy(data.begin(), data.end(), std::ostream_iterator<int>(output, " "));
+	std::cout << "File created\n" << '\n';
 
 	output.close();
 }
 
-void readFile(vector<int>& data, const string& filename) {
+void readFile(std::vector<int>& data, const std::string& filename) {
 	
-	ifstream input(filename);
+	std::ifstream input(filename);
 	if (input.fail()) {
-		cout << "Cannot open file" << '\n';
+		std::cout << "Cannot open file" << '\n';
 		return;
 	}
 
-	copy(istream_iterator<int>(input), istream_iterator<int>(), back_inserter(data));
+	copy(std::istream_iterator<int>(input), std::istream_iterator<int>(), back_inserter(data));
 
 	input.close();
 }

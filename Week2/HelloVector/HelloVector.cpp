@@ -18,6 +18,7 @@ int main() {
 
 	v.push_back(12.234);
 
+	std::cout << "Capacity: " << v.capacity() << ", size: " << v.size() << std::endl; // check capacity
 
 	// range based for loop
 	for (double value : v) {

@@ -21,7 +21,7 @@ template <class T>
 void LinkedList<T>::insertEnd(T item) {
 	Node<T>* newNode = new Node<T>;
 	newNode->value = item;
-	newNode->next = NULL;
+	newNode->next = nullptr;
 	Node<T>* temp = first;
 
 	if (temp == nullptr) {
@@ -57,7 +57,7 @@ bool LinkedList<T>::removeEnd() {
 
 	if (first == last) {
 		delete first;
-		first = last = NULL;
+		first = last = nullptr;
 		return true;
 	}
 	else {
@@ -132,6 +132,6 @@ T& LinkedList<T>::firstItem() {
 // Explicit template instantiation
 // https://stackoverflow.com/questions/495021/why-can-templates-only-be-implemented-in-the-header-file?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
 
-template class LinkedList<int>;
-template class LinkedList<double>;
-template class LinkedList<std::string>;
+//template class LinkedList<int>;
+//template class LinkedList<double>;
+//template class LinkedList<std::string>;

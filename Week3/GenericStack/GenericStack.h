@@ -1,5 +1,4 @@
-#ifndef STACK_H
-#define STACK_H
+#pragma once
 
 template<typename T>
 class Stack {
@@ -45,5 +44,3 @@ template<typename T>
 int Stack<T>::getSize() const {
 	return size;
 }
-
-#endif

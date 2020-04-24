@@ -12,7 +12,7 @@ constexpr std::size_t stringLength(const std::string_view& s) {
 int main() {
 	
 	// C String
-	constexpr char cstr[15] = "Hello World";
+	constexpr char cstr[500] = "Hello World";
 	std::cout << "String cstr, contains: " << cstr << ". of length: " << std::strlen(cstr) << std::endl;
 
 	// C++ String

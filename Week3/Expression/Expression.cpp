@@ -4,13 +4,11 @@
 #include <cctype>
 #include "ImprovedStack.h"
 
-using namespace std;
-
 // Split an expression into numbers, operators, and parenthese
-vector<string> split(const string& expression);
+std::vector<std::string> split(const std::string& expression);
 
 // Evaluate an expression and return the result
-int evaluateExpression(const string& expression);
+int evaluateExpression(const std::string& expression);
 
 // Perform an operation
 void processAnOperator(
@@ -18,20 +16,20 @@ void processAnOperator(
 
 int main()
 {
-	string expression;
-	cout << "Enter an expression: ";
-	getline(cin, expression);
+	std::string expression;
+	std::cout << "Enter an expression: ";
+	std::getline(std::cin, expression);
 
-	cout << expression << " = "
-		<< evaluateExpression(expression) << endl;
+	std::cout << expression << " = "
+		<< evaluateExpression(expression) << std::endl;
 
 	return 0;
 }
 
-vector<string> split(const string& expression)
+std::vector<std::string> split(const std::string& expression)
 {
-	vector<string> v; // A vector to store split items as strings
-	string numberString; // A numeric string
+	std::vector<std::string> v; // A vector to store split items as strings
+	std::string numberString; // A numeric string
 
 	for (unsigned int i = 0; i < expression.length(); i++)
 	{
@@ -47,7 +45,7 @@ vector<string> split(const string& expression)
 
 			if (!isspace(expression[i]))
 			{
-				string s;
+				std::string s;
 				s.append(1, expression[i]);
 				v.push_back(s); // Store an operator and parenthesis
 			}
@@ -62,7 +60,7 @@ vector<string> split(const string& expression)
 }
 
 // Evaluate an expression 
-int evaluateExpression(const string& expression)
+int evaluateExpression(const std::string& expression)
 {
 	// Create operandStack to store operands
 	Stack<int> operandStack;
@@ -71,7 +69,7 @@ int evaluateExpression(const string& expression)
 	Stack<char> operatorStack;
 
 	// Extract operands and operators
-	vector<string> tokens = split(expression);
+	std::vector<std::string> tokens = split(expression);
 
 	// Phase 1: Scan tokens
 	for (unsigned int i = 0; i < tokens.size(); i++)

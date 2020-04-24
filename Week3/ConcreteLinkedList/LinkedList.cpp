@@ -1,7 +1,7 @@
 #include "LinkedList.h"
 #include <cstddef>
 
-LinkedList::LinkedList() {
+LinkedList::LinkedList() noexcept {
 	first = nullptr;
 	last = nullptr;
 }
@@ -60,7 +60,7 @@ bool LinkedList::removeEnd() {
 	int nodeCount = 0;
 
 	while (temp != nullptr) {
-		nodeCount = nodeCount + 1;
+		nodeCount++;
 		temp = temp->next;
 	}
 

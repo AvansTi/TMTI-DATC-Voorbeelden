@@ -3,23 +3,24 @@
 #include <cstdlib> // For the abs function
 
 
-Rational::Rational() {
-	numerator = 0;
-	denominator = 1;
+Rational::Rational() noexcept : 
+	numerator(0), denominator(1)
+{
+
 }
 
-Rational::Rational(int numerator, int denominator) {
+Rational::Rational(int numerator, int denominator) noexcept {
 	int factor = gcd(numerator, denominator);
 	this->numerator = ((denominator > 0) ? 1 : -1) * numerator / factor;
 	this->denominator = abs(denominator) / factor;
 }
 
 int Rational::getNumerator() const {
-	return numerator;
+	return this->numerator;
 }
 
 int Rational::getDenominator() const {
-	return denominator;
+	return this->denominator;
 }
 
 // Find GCD of two numbers 
@@ -37,15 +38,13 @@ int Rational::gcd(int n, int d) {
 }
 
 Rational Rational::add(const Rational& secondRational) const {
-	int n = numerator * secondRational.getDenominator() +
-		denominator * secondRational.getNumerator();
+	int n = numerator * secondRational.getDenominator() + denominator * secondRational.getNumerator();
 	int d = denominator * secondRational.getDenominator();
 	return Rational(n, d);
 }
 
 Rational Rational::subtract(const Rational& secondRational) const {
-	int n = numerator * secondRational.getDenominator()
-		- denominator * secondRational.getNumerator();
+	int n = numerator * secondRational.getDenominator() - denominator * secondRational.getNumerator();
 	int d = denominator * secondRational.getDenominator();
 	return Rational(n, d);
 }
@@ -84,9 +83,9 @@ double Rational::doubleValue() const {
 	return 1.0 * getNumerator() / getDenominator();
 }
 
-string Rational::toString() const {
+std::string Rational::toString() const {
 	if (denominator == 1)
-		return to_string(numerator); // See Ch7 for to_string
+		return std::to_string(numerator); // See Ch7 for to_string
 	else
-		return  to_string(numerator) + "/" + to_string(denominator);
+		return std::to_string(numerator) + "/" + std::to_string(denominator);
 }

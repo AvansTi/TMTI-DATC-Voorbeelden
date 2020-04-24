@@ -1,25 +1,23 @@
-#ifndef COURSE_H
-#define COURSE_H
+#pragma once
+
 #include <string>
-using namespace std;
+
 
 class Course
 {
 public:
-	Course(const string& courseName, int capacity);
+	Course(const std::string& courseName, int capacity);
 	Course(const Course& course);
 	~Course();
-	string getCourseName() const;
-	void addStudent(const string& name);
-	void dropStudent(const string& name);
-	string* getStudents() const;
+	std::string getCourseName() const;
+	void addStudent(const std::string& name);
+	void dropStudent(const std::string& name);
+	std::string* getStudents() const;
 	int getNumberOfStudents() const;
 
 private:
-	string courseName;
-	string* students;
+	std::string courseName;
+	std::string* students;
 	int numberOfStudents;
 	int capacity;
 };
-
-#endif

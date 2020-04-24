@@ -1,8 +1,6 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
-#include <stddef.h>
+#pragma once 
 
-using namespace std;
+#include <string>
 
 template <class T>
 struct Node
@@ -32,5 +30,7 @@ private:
 	Node<T> *last;
 };
 
-#endif
+template class LinkedList<int>;
+template class LinkedList<double>;
+template class LinkedList<std::string>;
 

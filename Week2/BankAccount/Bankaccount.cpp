@@ -2,8 +2,8 @@
 #include <sstream>
 
 Bankaccount::Bankaccount(std::string lastName, std::string accountNumber) noexcept :
-lastName(lastName), accountNumber(accountNumber), balance(0) {
-	
+	lastName(lastName), accountNumber(accountNumber), balance(0) {
+
 }
 
 void Bankaccount::deposite(double amount) {
@@ -19,11 +19,10 @@ double Bankaccount::getBalance() {
 }
 
 std::string Bankaccount::getAccountNumber()  const {
-	//accountNumber = "";
 	return accountNumber;
 }
 
-std::string Bankaccount::toString() {
+std::string Bankaccount::toString() const {
 	std::ostringstream os;
 	os << lastName << ": number: " << accountNumber;
 	os << ", balance: " << balance;

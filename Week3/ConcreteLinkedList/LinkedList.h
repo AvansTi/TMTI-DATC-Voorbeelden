@@ -1,5 +1,4 @@
-#ifndef LINKEDLIST_H
-#define LINKEDLIST_H
+#pragma once
 
 struct Node {
 	int value;
@@ -8,7 +7,7 @@ struct Node {
 
 class LinkedList {
 public:
-	LinkedList();
+	LinkedList() noexcept;
 	~LinkedList();
 
 	void insertEnd(int item); // Add item to the end
@@ -25,8 +24,3 @@ private:
 	Node *first;
 	Node *last;
 };
-
-
-
-
-#endif

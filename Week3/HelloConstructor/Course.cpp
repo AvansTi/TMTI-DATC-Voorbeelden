@@ -1,12 +1,11 @@
 #include <iostream>
 #include "Course.h"
-using namespace std;
 
-Course::Course(const string& courseName, int capacity) {
+Course::Course(const std::string& courseName, int capacity) {
 	numberOfStudents = 0;
 	this->courseName = courseName;
 	this->capacity = capacity;
-	students = new string[capacity];
+	students = new std::string[capacity];
 }
 
 Course::Course(const Course& course) {
@@ -14,7 +13,7 @@ Course::Course(const Course& course) {
 	this->courseName = course.courseName;
 	this->capacity = course.capacity;
 	//this->students = course.students;
-	this->students = new string[this->capacity];
+	this->students = new std::string[this->capacity];
 	for (int i = 0; i < this->capacity; i++) {
 		this->students[i] = course.students[i];
 	}
@@ -24,20 +23,20 @@ Course::~Course() {
 	delete[] students;
 }
 
-string Course::getCourseName() const {
+std::string Course::getCourseName() const {
 	return courseName;
 }
 
-void Course::addStudent(const string& name) {
+void Course::addStudent(const std::string& name) {
 	students[numberOfStudents] = name;
 	numberOfStudents++;
 }
 
-void Course::dropStudent(const string& name) {
+void Course::dropStudent(const std::string& name) {
 	// Left as an exercise
 }
 
-string* Course::getStudents() const {
+std::string* Course::getStudents() const {
 	return students;
 }
 

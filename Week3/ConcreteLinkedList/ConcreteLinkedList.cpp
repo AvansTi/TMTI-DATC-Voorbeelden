@@ -1,12 +1,12 @@
-#include <iostream>
-#include <string>
+import std.core;
+
 #include "LinkedList.h"
 
-using namespace std;
 
 int main() {
 	LinkedList list;
 	list.insertFront(1);
+	//list.insertFront("Hello World");
 	return 0;
 }
 

@@ -9,6 +9,13 @@
 using namespace std::literals;
 
 
+void addStudentsToGroup(std::vector<Student*>& vec) {
+	Student* s10 = new Student { "Jan"s, "TI"s, "M"s, 1, Date{1, 1, 1996 } };
+	Student* s11= new Student { "Piet"s, "TI"s, "M"s, 2, Date{2, 8, 1996 } };
+	vec.push_back(s10);
+	vec.push_back(s11);
+}
+
 int main() {
 
 	// Aanmaken van student
@@ -28,16 +35,24 @@ int main() {
 
 	// Studenten toevoegen aan vector
 	// Pointers op deze manier is gevaarlijk!!!
-	Student s10{ "Jan"s, "TI"s, "M"s, 1, Date{1, 1, 1996 } };
-	Student s11{ "Piet"s, "TI"s, "M"s, 2, Date{2, 8, 1996 } };
+	
 	std::vector<Student*> group1Students;// = { s10, s11 };
-	group1Students.push_back(&s10);
-	group1Students.push_back(&s11);
+	addStudentsToGroup(group1Students);
+
+	for (auto s : group1Students) {
+		std::cout << s->toString() << '\n';
+	}
 
 	Group g1{ group1Students, "1" };
-	s11.naamInUpperCase();
+	//s11.naamInUpperCase();
 
 	std::cout << g1.toString();
+
+	while (!group1Students.empty()) {
+		Student* p = group1Students.back();
+		delete p; p = nullptr;
+		group1Students.pop_back();
+	}
 
 
 }

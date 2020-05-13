@@ -1,5 +1,6 @@
 #pragma once
 
+
 class Date {
 public:
 	Date(int year, int month, int day) :
@@ -7,8 +8,7 @@ public:
 	{
 
 	}
-
-	friend class AccessDate;
+	friend void p();
 
 private:
 	int year;

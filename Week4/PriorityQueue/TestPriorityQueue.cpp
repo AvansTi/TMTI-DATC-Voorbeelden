@@ -3,6 +3,7 @@
 #include <string>
 #include <queue>
 #include <deque>
+#include <vector>
 using namespace std;
 
 template<typename T>
@@ -16,7 +17,8 @@ void printQueue(T& pQueue) {
 
 int main() {
 	priority_queue<int> queue1;
-	priority_queue<int, deque<int>, greater<int>> queue2;
+	priority_queue<int, vector<int>, greater<>> queue2;
+
 
 	queue1.push(7); queue2.push(7);
 	queue1.push(4); queue2.push(4);
@@ -30,7 +32,6 @@ int main() {
 	cout << "\nContents in queue2: ";
 	printQueue(queue2);
 
-	cin.get();
 
 	return 0;
 }

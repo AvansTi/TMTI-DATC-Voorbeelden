@@ -1,15 +1,17 @@
-#ifndef RATIONALWITHOPERATORS_H
-#define RATIONALWITHOPERATORS_H
+#pragma once
 
 #include <string>
 #include <iostream>
-using namespace std;
 
 class Rational
 {
 public:
-	Rational();
-	Rational(int numerator, int denominator);
+	Rational() noexcept;
+	Rational(int numerator, int denominator) noexcept;
+	Rational(int numerator) noexcept; // Suitable for type conversion 
+
+
+
 	int getNumerator() const;
 	int getDenominator() const;
 	Rational add(const Rational& secondRational) const;
@@ -20,9 +22,9 @@ public:
 	bool equals(const Rational& secondRational) const;
 	int intValue() const;
 	double doubleValue() const;
-	string toString() const;
+	std::string toString() const;
 
-	Rational(int numerator); // Suitable for type conversion 
+	
 
 	// Define function operators for augmented operators
 	Rational& operator+=(const Rational& secondRational);
@@ -46,13 +48,12 @@ public:
 	Rational operator-();
 
 	// Define the << and >> operators
-	friend ostream& operator<<(ostream&, const Rational&);
-	friend istream& operator>>(istream&, Rational&);
+	friend std::ostream& operator<<(std::ostream&, const Rational&);
+	friend std::istream& operator>>(std::istream&, Rational&);
 
 private:
 	int numerator;
 	int denominator;
-	static int gcd(int n, int d);
 };
 
 // Define nonmember function operators for relational operators
@@ -68,5 +69,3 @@ Rational operator+(const Rational& r1, const Rational& r2);
 Rational operator-(const Rational& r1, const Rational& r2);
 Rational operator*(const Rational& r1, const Rational& r2);
 Rational operator/(const Rational& r1, const Rational& r2);
-
-#endif

@@ -1,5 +1,3 @@
-// HuffmanCodering.cpp : Defines the entry point for the console application.
-//
 #define PrintOutputBuildTree
 
 #include <iostream>
@@ -9,11 +7,11 @@
 #include <iterator>
 #include <algorithm>
 
-const int UniqueSymbols = 1 << CHAR_BIT;
-const char* SampleString = "best wel veel eeeeeees";
+constexpr const int UniqueSymbols = 1 << CHAR_BIT;
+constexpr const char* SampleString = "best wel veel eeeeeees";
 
-typedef std::vector<bool> HuffCode;
-typedef std::map<char, HuffCode> HuffCodeMap;
+using HuffCode = std::vector<bool>;
+using HuffCodeMap = std::map<char, HuffCode>;
 
 class INode {
 public:
@@ -133,18 +131,7 @@ int main() {
 		std::cout << std::endl;
 	}
 
-	std::cin.get();
 	return 0;
 }
 
 
-
-//#include <iostream>
-
-/*int main() {
-	unsigned int i = std::numeric_limits<unsigned int>::max();
-	std::cout << ++i;
-	std::cin.get();
-
-	return 0;
-}*/

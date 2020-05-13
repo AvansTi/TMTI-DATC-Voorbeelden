@@ -1,44 +1,44 @@
 #include <iostream>
 #include "Course.h"
-using namespace std;
 
-Course::Course(const string& courseName, int capacity) {
-	numberOfStudents = 0;
-	this->courseName = courseName;
-	this->capacity = capacity;
-	students = new string[capacity];
+
+
+Course::Course(const std::string& courseName, int capacity) noexcept: 
+	capacity(capacity), courseName(courseName), numberOfStudents(0) {
+	students.reset(new std::string[capacity]);
+	//students = new std::string[capacity];
 }
 
-Course::Course(const Course& course) {
-	numberOfStudents = course.getNumberOfStudents();
-	this->courseName = course.courseName;
-	this->capacity = course.capacity;
+Course::Course(const Course& course) noexcept :
+	capacity(course.capacity), courseName(course.courseName), numberOfStudents(course.numberOfStudents) 
+{
 	//this->students = course.students;
-	this->students = new string[this->capacity];
+	//this->students = new std::string[this->capacity];
+	students.reset(new std::string[capacity]);
 	for (int i = 0; i < this->capacity; i++) {
 		this->students[i] = course.students[i];
 	}
 }
 
-Course::~Course() {
-	delete[] students;
+Course::~Course() noexcept{
+	//delete[] students;
 }
 
-string Course::getCourseName() const {
+std::string Course::getCourseName() const {
 	return courseName;
 }
 
-void Course::addStudent(const string& name) {
+void Course::addStudent(const std::string& name) {
 	students[numberOfStudents] = name;
 	numberOfStudents++;
 }
 
-void Course::dropStudent(const string& name) {
+void Course::dropStudent(const std::string& name) {
 	// Left as an exercise
 }
 
-string* Course::getStudents() const {
-	return students;
+std::string* Course::getStudents() const {
+	return students.get();
 }
 
 int Course::getNumberOfStudents() const {
@@ -51,10 +51,11 @@ Course& Course::operator=(const Course& course) {
 		numberOfStudents = course.numberOfStudents;
 		capacity = course.capacity;
 
-		delete[] this->students; // Delete the old array
+		//delete[] this->students; // Delete the old array
 
 		// Create a new array with the same capacity as course copied
-		students = new string[capacity];
+		//students = new string[capacity];
+		students.reset(new std::string[capacity]);
 		for (int i = 0; i < numberOfStudents; i++)
 			students[i] = course.students[i];
 	}

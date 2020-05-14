@@ -19,11 +19,12 @@ int main() {
 	course2 = course1; // Create course2 as a copy of course1
 	course2.addStudent("Lisa Ma"); // Add a student to course2
 
-	std::cout << "students in course1: ";
+
+	std::cout << "students in course1: " << course1.getCourseName() << '\n';
 	printStudent(course1.getStudents(), course1.getNumberOfStudents());
 	std::cout << '\n';
 
-	std::cout << "students in course2: ";
+	std::cout << "students in course2: " << course2.getCourseName() << '\n';
 	printStudent(course2.getStudents(), course2.getNumberOfStudents());
 	std::cout << '\n';
 

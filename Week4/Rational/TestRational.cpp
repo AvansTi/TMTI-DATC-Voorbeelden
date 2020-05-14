@@ -7,6 +7,16 @@ int main() {
 	Rational r1(4, 2);
 	Rational r2(2, 3);
 
+
+	auto r33 = r1 + r2;
+
+	Rational r44;
+	std::cin >> r44;
+
+	std::cout << "Value of r44: " << r44 << '\n';
+
+
+
 	// Test relational operators
 	std::cout << r1 << " > " << r2 << " is " <<
 		((r1 > r2) ? "true" : "false") << '\n';

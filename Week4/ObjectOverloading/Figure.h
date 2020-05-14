@@ -1,6 +1,4 @@
 #pragma once
-
-
 class Figure {
 protected:
 	char symbol;

@@ -106,6 +106,7 @@ void GenerateCodes(const INode* node, const HuffCode& prefix, HuffCodeMap& outCo
 }
 
 int main() {
+
 	// Build frequency table
 	int frequencies[UniqueSymbols] = { 0 };
 	const char* ptr = SampleString;

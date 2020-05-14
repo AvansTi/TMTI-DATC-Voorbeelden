@@ -5,7 +5,7 @@ class AccessDate {
 public:
 	static void p() {
 		Date birthDate(2010, 3, 4);
-		birthDate.year = 2000;
+		birthDate.year = 2005;
 		std::cout << birthDate.year << '\n';
 	}
 };

@@ -14,6 +14,9 @@ void drawFigure(Figure &f) {
 	if (pRechthoek != nullptr) {
 		std::cout << pRechthoek->surface() << '\n';
 	}
+	else {
+		std::cout << "figure at address: " << &f << " is not a rectangle \n";
+	}
 }
 
 int main() {

@@ -7,7 +7,7 @@ private:
 	int width, height;
 public:
 	Rectangle(int width, int height)
-		: width(width), height(height) 
+		: width(width), height(height)
 	{
 	};
 

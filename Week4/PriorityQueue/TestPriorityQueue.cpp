@@ -16,21 +16,31 @@ void printQueue(T& pQueue) {
 }
 
 int main() {
+
+	auto cmp = [](const int lhs, const int rhs) {
+		return (lhs % 3) > (rhs % 3);
+	};
+
 	priority_queue<int> queue1;
 	priority_queue<int, vector<int>, greater<>> queue2;
+	priority_queue<int, vector<int>, decltype(cmp)> queue3(cmp);
 
 
-	queue1.push(7); queue2.push(7);
-	queue1.push(4); queue2.push(4);
-	queue1.push(9); queue2.push(9);
-	queue1.push(2); queue2.push(2);
-	queue1.push(1); queue2.push(1);
+	for (auto v : { 7,4,9,2,1 }) {
+		queue1.push(v);
+		queue2.push(v);
+		queue3.push(v);
+	}
+
 
 	cout << "Contents in queue1: ";
 	printQueue(queue1);
 
 	cout << "\nContents in queue2: ";
 	printQueue(queue2);
+
+	cout << "\nContents in queue3: ";
+	printQueue(queue3);
 
 
 	return 0;

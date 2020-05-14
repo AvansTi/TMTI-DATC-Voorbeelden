@@ -21,7 +21,13 @@ struct NodeCmp {
 };
 
 std::shared_ptr<INode> BuildTree(const int(&frequencies)[UniqueSymbols]) {
+
+	auto cmp = [](std::shared_ptr<const INode> lhs, std::shared_ptr<const INode> rhs)  {
+		return lhs->frequency > rhs->frequency;
+	};
+
 	std::priority_queue<std::shared_ptr<INode>, std::vector<std::shared_ptr<INode>>, NodeCmp> trees;
+	//std::priority_queue<std::shared_ptr<INode>, std::vector<std::shared_ptr<INode>>, decltype(cmp)> trees(cmp);
 
 	for (int i = 0; i < UniqueSymbols; ++i) {
 		if (frequencies[i] != 0)

@@ -4,30 +4,31 @@
 
 class INode {
 public:
-	const int frequency;
+	const unsigned frequency;
 
-	virtual ~INode() {};
 	virtual void printNode() = 0;
+	virtual ~INode() {}
 
 protected:
-	INode(int frequency) : frequency(frequency) {
+	INode(unsigned frequency) :
+		frequency(frequency) {
 		
 	}
 };
+
 
 class LeafNode : public INode {
 public:
 	const char c;
 
-	LeafNode(char c, unsigned frequency) :
+	LeafNode(char c, unsigned frequency) : 
 		INode(frequency), c(c) {
 		
 	}
 
 	void printNode() override {
-		std::cout << "Char: " << c << ", Frequency: " << frequency << '\n';
+		std::cout << "Char: " << c << ", freq: " << frequency << '\n';
 	}
-
 };
 
 class InternalNode : public INode {
@@ -35,8 +36,8 @@ public:
 	INode* left;
 	INode* right;
 
-	InternalNode(INode* left, INode* right) : 
-		INode(left->frequency + right->frequency),
+	InternalNode(INode* left, INode* right) :
+		INode(left->frequency+right->frequency),
 		left(left), right(right) {
 		
 	}
@@ -53,7 +54,6 @@ public:
 		right->printNode();
 	}
 };
-
 
 struct NodeCmp {
 	bool operator()(const INode* lhs, const INode* rhs) const { return lhs->frequency > rhs->frequency; }

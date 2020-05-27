@@ -3,15 +3,14 @@
 #include <string>
 #include <stdexcept>
 
-std::tuple<double, char, std::string> get_student(int id)
-{
+auto get_student(int id) -> std::tuple<double, char, std::string>  {
 	if (id == 0) return { 3.8, 'A', "Lisa Simpson" };
 	if (id == 1) return { 2.9, 'C', "Milhouse Van Houten" };
 	if (id == 2) return std::make_tuple(1.7, 'D', "Ralph Wiggum");
 	throw std::invalid_argument("id");
 }
 
-int main() {
+auto main() {
 	auto student0 = get_student(0);
 	std::cout << "ID: 0, "
 		<< "GPA: " << std::get<0>(student0) << ", "
@@ -33,4 +32,7 @@ int main() {
 		<< "GPA: " << gpa2 << ", "
 		<< "grade: " << grade2 << ", "
 		<< "name: " << name2 << '\n';
+
+
+	return 0;
 }

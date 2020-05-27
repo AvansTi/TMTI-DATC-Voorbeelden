@@ -13,37 +13,36 @@ using namespace std;
 typedef std::vector<bool> HuffCode;
 typedef std::map<char, HuffCode> HuffCodeMap;
 
-void CreateFrequencyTable(const string& input, map<char, unsigned>& freqMap) {
-	// Build the map
-	for (auto c: input) {
+void CreateFrequencyMap(const string& input, map<char, unsigned>& freqMap) {
+	
+	for (auto c : input) {
 		freqMap[c]++;
 	}
 
-	// Print the map
-	cout << "Frequency Map: \n";
-	for (auto pair : freqMap) {
-		cout << pair.first << " : " << pair.second << '\n';
+	for (auto p : freqMap) {
+		cout << "Char: " << p.first << " : " << p.second << " times\n";
 	}
 }
 
-INode* BuildTree(map<char, unsigned>& freqMap) {
-
+INode* BuildHuffmanTree(map<char, unsigned>& freqMap) {
 	priority_queue<INode*, std::vector<INode*>, NodeCmp> trees;
 
-	for (auto f : freqMap) {
-		trees.push(new LeafNode(f.first, f.second));
+	for (auto p : freqMap) {
+		trees.push(new LeafNode(p.first, p.second));
 	}
 
 	while (trees.size() > 1) {
+		
 		INode* left = trees.top();
 		trees.pop();
 
 		INode* right = trees.top();
 		trees.pop();
 
-		trees.push(new InternalNode(left, right));
-
+		INode* internalNode = new InternalNode(left, right);
+		trees.push(internalNode);
 	}
+
 	return trees.top();
 }
 
@@ -61,31 +60,30 @@ void GenerateCodes(const INode* node, const HuffCode& prefix, HuffCodeMap& outCo
 	}
 }
 
+
 int main() {
 
 	std::string inputString{ "Heel veel ees's" };
 
-	// Build frequency table
-	map<char, unsigned> frequencyMap;
-	CreateFrequencyTable(inputString, frequencyMap);
+	// Create Frequency Map
+	map<char, unsigned> freqMap;
+	CreateFrequencyMap(inputString, freqMap);
 
-	// Build tree
-	INode* rootNode = BuildTree(frequencyMap);
+	// Build Huffman Tree
+	INode* root = BuildHuffmanTree(freqMap);
 
-	// Assign code
+	// Generate Codes
 	HuffCodeMap codes;
-	GenerateCodes(rootNode, HuffCode(), codes);
-	delete rootNode;
+	GenerateCodes(root, HuffCode(), codes);
+	delete root;
 
-
+	// print codes 
 	cout << "\nCodes:\n";
 	for (auto& code : codes) {
-		std::stringstream intCode;
-		std::cout << code.first << " ";
-		std::copy(code.second.begin(), code.second.end(),
-			std::ostream_iterator<bool>(intCode));
-
-		std::cout << intCode.str() << '\n';
+		stringstream intCode;
+		cout << code.first << " ";
+		std::copy(code.second.begin(), code.second.end(), ostream_iterator<bool>(intCode));
+		cout << intCode.str() << '\n';
 	}
 
 	cin.get();

@@ -23,7 +23,7 @@ void writeFile() {
 	output.open("people.txt"); // Create a file
 
 	// Write two lines
-	output << "Etienne" << " " << "Goossens" << " " << 1990 << '\n';
+	output << "Marcel" << " " << "Vissers" << " " << 1974 << '\n';
 	output << "Johan" << " " << "Talboom" << " " << 1984 << '\n';
 
 	output.close();

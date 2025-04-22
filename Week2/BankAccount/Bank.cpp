@@ -17,16 +17,16 @@ void addAccount(std::vector<Bankaccount>& accounts, const std::string& name, con
 int main() {
 
 	std::vector<Bankaccount> accounts;
-	Bankaccount goossens = { "Goossens", "12345" };
-	goossens.deposite(1000.34);
-	accounts.emplace_back(goossens);
-	//accounts.push_back(goossens);
-	goossens.deposite(1000.34);
+	Bankaccount vissers = { "Vissers", "12345" };
+	vissers.deposite(1000.34);
+	accounts.emplace_back(vissers);
+	//accounts.push_back(vissers);
+	vissers.deposite(1000.34);
 	accounts.push_back(Bankaccount("Jansen", "23456"));
 
 	addAccount(accounts, "Jantje", "666", 2000);
 
-	//goossens.deposite(1000.34);
+	//vissers.deposite(1000.34);
 
 	for (Bankaccount b : accounts) {
 		std::cout << b.toString() << std::endl;

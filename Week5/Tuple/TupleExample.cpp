@@ -10,7 +10,7 @@ auto get_student(int id) -> std::tuple<double, char, std::string>  {
 	throw std::invalid_argument("id");
 }
 
-auto main() {
+int main() {
 	auto student0 = get_student(0);
 	std::cout << "ID: 0, "
 		<< "GPA: " << std::get<0>(student0) << ", "

@@ -1,9 +1,10 @@
 #include "Rational.h"
-
+/*
 #include <sstream> // Used in toString to convert numbers to strings
 #include <cmath> // For the abs function
-#include <numeric>
+#include <numeric>*/
 
+import std.core;
 
 Rational::Rational() noexcept :
 	numerator(0), denominator(1)

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30011.22
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35931.197 d17.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fibonacci", "Fibonacci\Fibonacci.vcxproj", "{94D3CE27-C236-4DD3-BC8F-BB7843031F7A}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloNoAsync", "HelloNoAsync\HelloNoAsync.vcxproj", "{3E6FBA02-8D7C-4AF0-993B-1EE5F82FCFD0}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "HelloThreads", "HelloThreads\HelloThreads.vcxproj", "{5026A1D1-BAB8-4011-9BE3-C4F8578EDA1F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AST", "AST\AST.vcxproj", "{A89C72B6-5426-4DD3-AE29-09A894388FA9}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Union", "Union\Union.vcxproj", "{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiveHuffmanCoding", "LiveHuffmanCoding\LiveHuffmanCoding.vcxproj", "{39105991-442E-4490-AC54-E476C9C595CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +67,30 @@ Global
 		{5026A1D1-BAB8-4011-9BE3-C4F8578EDA1F}.Release|x64.Build.0 = Release|x64
 		{5026A1D1-BAB8-4011-9BE3-C4F8578EDA1F}.Release|x86.ActiveCfg = Release|Win32
 		{5026A1D1-BAB8-4011-9BE3-C4F8578EDA1F}.Release|x86.Build.0 = Release|Win32
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Debug|x64.ActiveCfg = Debug|x64
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Debug|x64.Build.0 = Debug|x64
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Debug|x86.ActiveCfg = Debug|Win32
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Debug|x86.Build.0 = Debug|Win32
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Release|x64.ActiveCfg = Release|x64
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Release|x64.Build.0 = Release|x64
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Release|x86.ActiveCfg = Release|Win32
+		{A89C72B6-5426-4DD3-AE29-09A894388FA9}.Release|x86.Build.0 = Release|Win32
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Debug|x64.ActiveCfg = Debug|x64
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Debug|x64.Build.0 = Debug|x64
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Debug|x86.Build.0 = Debug|Win32
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Release|x64.ActiveCfg = Release|x64
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Release|x64.Build.0 = Release|x64
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Release|x86.ActiveCfg = Release|Win32
+		{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}.Release|x86.Build.0 = Release|Win32
+		{39105991-442E-4490-AC54-E476C9C595CF}.Debug|x64.ActiveCfg = Debug|x64
+		{39105991-442E-4490-AC54-E476C9C595CF}.Debug|x64.Build.0 = Debug|x64
+		{39105991-442E-4490-AC54-E476C9C595CF}.Debug|x86.ActiveCfg = Debug|Win32
+		{39105991-442E-4490-AC54-E476C9C595CF}.Debug|x86.Build.0 = Debug|Win32
+		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x64.ActiveCfg = Release|x64
+		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x64.Build.0 = Release|x64
+		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x86.ActiveCfg = Release|Win32
+		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

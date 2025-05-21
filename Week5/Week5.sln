@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35931.197 d17.13
+VisualStudioVersion = 17.13.35931.197
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Fibonacci", "Fibonacci\Fibonacci.vcxproj", "{94D3CE27-C236-4DD3-BC8F-BB7843031F7A}"
 EndProject
@@ -18,6 +18,8 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Union", "Union\Union.vcxproj", "{F6B75E73-687B-4AB3-93C0-13AE1DF94A9F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LiveHuffmanCoding", "LiveHuffmanCoding\LiveHuffmanCoding.vcxproj", "{39105991-442E-4490-AC54-E476C9C595CF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BoostVoorbeeld", "BoostVoorbeeld\BoostVoorbeeld.vcxproj", "{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -91,6 +93,14 @@ Global
 		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x64.Build.0 = Release|x64
 		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x86.ActiveCfg = Release|Win32
 		{39105991-442E-4490-AC54-E476C9C595CF}.Release|x86.Build.0 = Release|Win32
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Debug|x64.ActiveCfg = Debug|x64
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Debug|x64.Build.0 = Debug|x64
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Debug|x86.ActiveCfg = Debug|Win32
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Debug|x86.Build.0 = Debug|Win32
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Release|x64.ActiveCfg = Release|x64
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Release|x64.Build.0 = Release|x64
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Release|x86.ActiveCfg = Release|Win32
+		{DCB3F8DB-FD53-4CD5-94D6-CDC1D00AE281}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
